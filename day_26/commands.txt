@@ -1,0 +1,9 @@
+helm create myapp
+
+helm install myapp ./myapp
+
+kubectl get pods
+
+kubectl get svc
+
+helm list
