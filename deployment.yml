@@ -2,23 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: nginx-deployment
+  name: myapp
+  labels:
+    app: myapp
 
 spec:
   replicas: 1
 
   selector:
     matchLabels:
-      app: nginx
+      app: myapp
 
   template:
     metadata:
       labels:
-        app: nginx
+        app: myapp
 
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: myapp
+        image: 691210492006.dkr.ecr.us-east-1.amazonaws.com/myapp:latest
+
         ports:
         - containerPort: 80
+
