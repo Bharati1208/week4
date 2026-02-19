@@ -1,0 +1,19 @@
+minikube start --driver=docker
+
+kubectl create deployment nginx --image=nginx
+
+kubectl get pods
+
+kubectl expose deployment nginx --type=NodePort --port=80
+
+kubectl get svc
+
+minikube service nginx
+
+kubectl apply -f .
+kubectl get pods
+kubectl get svc
+kubectl describe deployment nginx-deployment
+minikube service nginx-service
+
+
